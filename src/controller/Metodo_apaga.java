@@ -41,13 +41,13 @@ public class Metodo_apaga {
 			} else {
 				Notificar n = new Notificar();
 				Mensagem m = new Mensagem();
-				m.emailRecebe = cadastro[i].email;
-				m.assunto = "SUA CONSULTA";
-				m.corpo = "SUA CONSULTA SOBRE: " + cadastro[i].atividade + " DO DIA " + cadastro[i].data
-						+ " FOI CANCELADA";
-				m.seuEmail = JOptionPane.showInputDialog("DIGITE SEU EMAIL");
-				m.suaSenha = JOptionPane.showInputDialog("DIGITE SUA SENHA");
-				n.EnviarEmail(m);
+//				m.emailRecebe = cadastro[i].email;
+//				m.assunto = "SUA CONSULTA";
+//				m.corpo = "SUA CONSULTA SOBRE: " + cadastro[i].atividade + " DO DIA " + cadastro[i].data
+//						+ " FOI CANCELADA";
+//				m.seuEmail = JOptionPane.showInputDialog("DIGITE SEU EMAIL");
+//				m.suaSenha = JOptionPane.showInputDialog("DIGITE SUA SENHA");
+//				n.EnviarEmail(m);
 			}
 			i++;
 		}
