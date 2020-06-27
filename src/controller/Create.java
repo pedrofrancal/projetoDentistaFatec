@@ -15,5 +15,15 @@ public class Create {
 	 *o que carregar na classe paciente
 	 *nome; telefone; email; rg
 	 */
-	
+	public void gravarTxt(Pacientes[] paciente) {
+		File arq = new File(System.getProperty("user.home") + "/Desktop", "entrada.txt");
+		StringBuffer buffer = new StringBuffer();
+		for(Pacientes p : paciente) {
+			buffer.append(p.getNomecompleto()+";");
+			buffer.append(p.getTelefone()+";");
+			buffer.append(p.getEmail()+";");
+			buffer.append(p.getRg());
+			buffer.append("\n");
+		}
+	}
 }
