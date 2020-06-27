@@ -1,98 +1,43 @@
 package controller;
 
-/*
- * Elaborado por Pedro França
- *Caso for preciso usar o heap para ordenar palavras
+/*Elaborado por Pedro França
+ *Utilizando o compareTo para ordenar Strings
  */
-
 public class HeapSortLetras {
-	// usar para achar a posição do heap
-	private static int pos = -1;
+	public static void HeapSort(String[] v) {
+		constroiMaximaOrdem(v);
+		int n = v.length;
 
-	// predefinir o tamanho do heap
-	private static String[] heap = new String[40];
+		for (int i = v.length - 1; i > 0; i--) {
+			swap(v, i, 0);
+			ordenaDescendo(v, 0, --n);
+		}
+	}
 
-	private static void criarHeap(String palavra) {
-		pos++;
-		heap[pos] = palavra;
-		int comparar = pos;
+	private static void constroiMaximaOrdem(String[] v) {
+		for (int i = v.length / 2 - 1; i >= 0; i--)
+			ordenaDescendo(v, i, v.length);
+	}
 
-		String temporaria;
-
-		int i = pos / 2;
-
-		while (i >= 0) {
-			// vai trocar se for menor que o guardado
-			// compareTo compara as strings por exemplo
-			// ab2 vem antes que ab3 e que ac3, então retorna -1
-			// retorna negativo se a string vem primeiro
-			if (heap[i].compareTo(heap[comparar]) > 0) {
-				temporaria = heap[i];
-				heap[i] = heap[comparar];
-				heap[comparar] = temporaria;
-				comparar = i;
-
-				// continuar o heap
-				i = i / 2;
-			} else {
-				break;
+	private static void ordenaDescendo(String[] vetor, int pos, int tamanhoDoVetor) {
+		// obtém as posições dos filhos
+		int max = 2 * pos + 1, right = max + 1;
+		if (max < tamanhoDoVetor) {
+			// verifica qual dos dois filhos possuem o maior valor
+			if ((right < tamanhoDoVetor) && (vetor[max].compareTo(vetor[right])) < 0)
+				max = right;
+			// verifica se o filho com o mair valor tem um valor maior que o pai
+			if (vetor[max].compareTo(vetor[pos]) > 0) {
+				swap(vetor, max, pos);
+				ordenaDescendo(vetor, max, tamanhoDoVetor);
 			}
 		}
 	}
 
-	private static void ordenaHeap() {
-		int esquerda;
-		int direita;
-
-		while (pos >= 0) {
-			String temporaria;
-			// pegando o primeiro elemento
-			temporaria = heap[0];
-			
-			//só funciona se eu printo aqui
-			System.out.print(temporaria + " "); 
-			// colocando em ultimo
-			heap[0] = heap[pos];
-
-			pos--;
-
-			int i = 0;
-			int tamanho = pos;
-			// iniciar a esquerda e direita
-			esquerda = 1;
-			direita = esquerda + 1;
-
-			while (esquerda <= tamanho) {
-				// verificar tamanhos e então trocar
-				if (heap[i].compareTo(heap[esquerda]) <= 0 && heap[i].compareTo(heap[direita]) <= 0) {
-					break;
-				} else {
-					if (heap[esquerda].compareTo(heap[direita]) < 0) {
-						temporaria = heap[i];
-						heap[i] = heap[esquerda];
-						heap[esquerda] = temporaria;
-						i = esquerda;
-					} else {
-						temporaria = heap[i];
-						heap[i] = heap[direita];
-						heap[direita] = temporaria;
-						i = direita;
-					}
-				}
-				// trocar esquerda e direita
-				esquerda = 2 * esquerda;
-				direita = esquerda + 1;
-			}
-		}
-	}
-	
-	public static void ordenar(String palavras[], int tamanho) {
-		//gerar heap
-		
-		
-		for(int i = 0; i<tamanho; i++) {
-			criarHeap(palavras[i]);
-		}
-		ordenaHeap();
+	// faz a troca de dos valores
+	public static void swap(String[] v, int j, int aposJ) {
+		String aux = v[j];
+		v[j] = v[aposJ];
+		v[aposJ] = aux;
 	}
 }
