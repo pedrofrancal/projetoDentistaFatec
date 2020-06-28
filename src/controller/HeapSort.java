@@ -1,5 +1,5 @@
 package controller;
-/*Elaborado por Raizer
+/*Elaborado por Raizer Varela
  *Utilização:
  *Chamar o heapSort, que automaticamente cria o heap e começa a ordenar
  */

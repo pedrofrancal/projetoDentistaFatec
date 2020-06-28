@@ -23,7 +23,7 @@ public class Create {
 
 		for (Pacientes p : paciente) {
 			buffer.append(p.getNomecompleto() + ";");
-//				buffer.append(p.getTelefone()+";");
+			buffer.append(p.getTelefone()+";");
 			buffer.append(p.getEmail() + ";");
 			buffer.append(p.getRg());
 			buffer.append("\n");
@@ -36,7 +36,7 @@ public class Create {
 	public void gravar(Pacientes paciente) throws IOException {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append(paciente.getNomecompleto() + ";");
-//		buffer.append(paciente.getTelefone()+";");
+		buffer.append(paciente.getTelefone()+";");
 		buffer.append(paciente.getEmail() + ";");
 		buffer.append(paciente.getRg());
 		buffer.append("\n");
