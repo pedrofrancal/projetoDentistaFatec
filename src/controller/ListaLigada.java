@@ -88,6 +88,22 @@ public class ListaLigada{
 		return agora.getDado();
 	}
 	
+	//verifica pelo nome do paciente e retorna a posição
+	//pode causar falhas com nomes iguais
+	public int remover(String nome) {
+		No agora = inicio;
+		int pos=0;
+		
+		if(inicio != null) {
+			while(agora.getDado().getNomecompleto()!=nome||agora.getNext()==null) {
+				agora = agora.getNext();
+				pos++;
+			}
+		}
+		
+		return pos;
+	}
+	
 	public boolean remover(int pos) {
 		//aqui vemos se é maior que a contagem
 		//vamos usar verdadeiro e falso pra ver se foi possivel deletar
