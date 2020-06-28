@@ -3,16 +3,16 @@ package controller;
 public class Pacientes {
 
     private String nomecompleto;
-    private int rg;
+    private String rg;
     private String email;
-
+    private String telefone;
 
     // construtor	 
     Pacientes() {
         super();
     }
 
-
+    
 	public String getNomecompleto() {
 		return nomecompleto;
 	}
@@ -22,13 +22,20 @@ public class Pacientes {
 		this.nomecompleto = nomecompleto;
 	}
 
-
-	public int getRg() {
+	public void setTelefone(String telefone) {
+		 this.telefone = telefone;
+	}
+	
+	public String getTelefone() {
+		return telefone;
+	}
+	
+	public String getRg() {
 		return rg;
 	}
 
 
-	public void setRg(int rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 
@@ -41,6 +48,6 @@ public class Pacientes {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+	
     
 }
