@@ -1,7 +1,12 @@
 package controller;
 
-import java.io.*;
-import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.swing.JOptionPane;
 
 public class Metodo_agen {
 
