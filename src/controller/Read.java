@@ -7,7 +7,7 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-//Parte Read 
+//Parte Read feita por Augusto Furtado
 
 
 public class Read {
@@ -40,7 +40,7 @@ public class Read {
 			buffer.append(lido);
             String teste = buffer.toString();
             vet = teste.split(";");
-            //Eu guardo no vetor
+            //Eu guardo no vetor o que estava salvo no buffer
             
             paciente.setNomecompleto(vet[0]);
             System.out.println(paciente.getNomecompleto());
