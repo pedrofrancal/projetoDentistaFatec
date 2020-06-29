@@ -7,9 +7,20 @@ public class Pacientes {
     private String email;
     private String telefone;
 	private String dataAgenda;
+	private String TipoDeAgendamento;
     
-    // construtor	 
-    Pacientes() {
+    public String getTipoDeAgendamento() {
+		return TipoDeAgendamento;
+	}
+
+
+	public void setTipoDeAgendamento(String tipoDeAgendamento) {
+		TipoDeAgendamento = tipoDeAgendamento;
+	}
+
+
+	// construtor	 
+    public Pacientes() {
         super();
     }
 

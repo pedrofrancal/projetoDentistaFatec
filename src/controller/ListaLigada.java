@@ -90,18 +90,18 @@ public class ListaLigada{
 	
 	//verifica pelo nome do paciente e retorna a posição
 	//pode causar falhas com nomes iguais
-	public int procurar(String nome) {
+	public Pacientes procurar(String nome) {
 		No agora = inicio;
-		int pos=0;
+		
 		
 		if(inicio != null) {
 			while(agora.getDado().getNomecompleto()!=nome||agora.getNext()==null) {
 				agora = agora.getNext();
-				pos++;
+				
 			}
 		}
 		
-		return pos;
+		return agora.getDado();
 	}
 	
 	public void ordenar() {
@@ -149,32 +149,23 @@ public class ListaLigada{
 		return aux;
 	}
 
-	public boolean remover(int pos) {
-		//aqui vemos se é maior que a contagem
-		//vamos usar verdadeiro e falso pra ver se foi possivel deletar
-		if (pos < 1 || pos > tamanho()) {
-			return false;
-		}
-		
-		No agora = inicio;
-		if(inicio != null) {
-			for(int i = 0; i<pos; i++) {
-				if(agora.getNext() == null) {
-					return false;
-				}
-				agora = agora.getNext();
-			}
-			agora.setNext(agora.getNext().getNext());
-		}
-		//agora que voltamos 1 do fim temos que tirar do contador
-		diminuirQuantia();
-		return true;
-	}
+	public void remover(String nome) {
+        No agora = inicio;
+        if(inicio != null) {
+            while(!agora.getDado().getNomecompleto().equals(nome)) {
+                agora = agora.getNext();
+            }
+            agora.setNext(agora.getNext().getNext());
+        }
+        //agora que voltamos 1 do fim temos que tirar do contador
+        diminuirQuantia();
+    }
 	
 	public int tamanho() {
 		return verQuantia();
 	}
 	
+	@Override
 	public String toString() {
 		//aqui provavelmente não vamos usar, mas quero uma forma de imprimir a lista em texto
 		//então vou fazer dentro da lista uma forma de imprimir ela mais simples

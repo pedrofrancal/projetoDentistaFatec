@@ -49,10 +49,17 @@ public class principal extends JFrame {
 		txtSair.setForeground(vermelho);
 		contentPane.add(txtSair);
 		
+		JLabel txtBemvindo = new JLabel("");
+		txtBemvindo.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\\u00C1rea de Trabalho\\proejct\\TEXTO TRAB.png"));
+		txtBemvindo.setBounds(249, 64, 591, 344);
+		contentPane.add(txtBemvindo);
+		
 		JLabel telaMenu = new JLabel("");
 		telaMenu.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\\u00C1rea de Trabalho\\proejct\\menu2.png"));
 		telaMenu.setBounds(0, 0, 884, 461);
 		contentPane.add(telaMenu);
+		
+		
 		
 		
 	

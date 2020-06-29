@@ -47,7 +47,7 @@ public class Read {
             paciente.setEmail(vet[2]);
             paciente.setRg(vet[3]);
             paciente.setDataAgenda(vet[4]);
-            paciente.setTipoDeAgentamento(vet[5]);
+            paciente.setTipoDeAgendamento(vet[5]);
             list.adicionar(paciente);
 		}
 		read.close();

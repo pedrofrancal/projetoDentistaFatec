@@ -24,12 +24,12 @@ public class Delete {
         return preparo;
     }
 
-    public void removePaciente(ListaLigada controller, int id) throws IOException {
-    	int indexPaciente = 0;
-    	if(indexPaciente != 0) {
+    public void removePaciente(ListaLigada controller, String nome) throws IOException {
+    	Pacientes indexPaciente = controller.procurar(nome);
+    	if(!indexPaciente.getNomecompleto().equals("")) {
         	File dir = new File(System.getProperty("user.home") + "/Desktop");
     		File arq = new File(System.getProperty("user.home") + "/Desktop", "entrada.txt");
-    		controller.remover(indexPaciente);
+    		controller.remover(indexPaciente.getNomecompleto());
             if(controller.get(0)==null) {
                 arq.delete();
             }else {

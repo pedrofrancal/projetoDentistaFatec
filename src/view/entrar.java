@@ -20,6 +20,7 @@ public class entrar extends JFrame {
 	private static final long serialVersionUID = 1L;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					entrar frame = new entrar();

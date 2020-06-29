@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
@@ -18,13 +19,17 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
 
+import controller.Delete;
+import controller.ListaLigada;
+import controller.Read;
 import model.verificarTableModel;
 
 public class verificarConsultas extends JFrame {
-
+	private ListaLigada lista;
 	private JPanel contentPane;
 	private JTable table;
 	public verificarConsultas() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 500);
 		contentPane = new JPanel();
@@ -62,7 +67,7 @@ public class verificarConsultas extends JFrame {
 		table = new JTable();
 		table.setLocation(0, 36);
 		//table.setBounds(194, 35, 690, 426);
-		verificarTableModel model = new verificarTableModel();
+		verificarTableModel model = new verificarTableModel(lista);
 		table.setModel(model);
 		table.setShowVerticalLines(false);
 		JTableHeader th = table.getTableHeader(); 
@@ -93,7 +98,7 @@ public class verificarConsultas extends JFrame {
         });
 		contentPane.add(table);
 		JScrollPane scroll = new JScrollPane(table);
-		 scroll.setBounds(194, 134, 690, 327);
+		 scroll.setBounds(194, 85, 690, 376);
         contentPane.add(scroll);
         
         JComboBox comboBox = new JComboBox();
@@ -101,10 +106,31 @@ public class verificarConsultas extends JFrame {
 		contentPane.add(comboBox);
 		comboBox.addItem("todos");
 		
+		JLabel bntRemover = new JLabel("");
+		bntRemover.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\\u00C1rea de Trabalho\\proejct\\btn.png"));
+		bntRemover.setBounds(734, 41, 140, 43);
+		contentPane.add(bntRemover);
+		
+		bntRemover.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            	Delete delete = new Delete();
+            	try {
+					delete.removePaciente(lista,"");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+            	
+            }
+        });
+	
+		
 		JLabel telaMenu = new JLabel("");
 		telaMenu.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\\u00C1rea de Trabalho\\proejct\\menu2.png"));
 		telaMenu.setBounds(0, 0, 884, 461);
 		contentPane.add(telaMenu);
+		
+	
 		
 		
 		
