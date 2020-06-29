@@ -41,8 +41,8 @@ public class Create {
 		buffer.append(paciente.getTelefone()+";");
 		buffer.append(paciente.getEmail() + ";");
 		buffer.append(paciente.getRg());
-		buffer.append(p.getDataAgenda());
-		buffer.append(p.getTipoDeAgendamento())
+		buffer.append(paciente.getDataAgenda());
+		buffer.append(paciente.getTipoDeAgendamento())
 		buffer.append("\n");
 		
 		atualizarTxt(buffer);
