@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 public class Create {
 	/*
 	 * Estrutura do txt Separaremos com ; e então na leitura/criação saberemos o que
-	 * carregar na classe paciente nome; telefone; email; rg poderiamos até salvar
+	 * carregar na classe paciente nome; telefone; email; rg; data; tipo de consulta poderiamos até salvar
 	 * como csv, mas para ficarmos dentro da proposta do trabalho utilizaremos o txt
 	 */
 
@@ -26,6 +26,8 @@ public class Create {
 			buffer.append(p.getTelefone()+";");
 			buffer.append(p.getEmail() + ";");
 			buffer.append(p.getRg());
+			buffer.append(p.getDataAgenda());
+			buffer.append(p.getTipoDeAgendamento())
 			buffer.append("\n");
 		}
 		
@@ -39,6 +41,8 @@ public class Create {
 		buffer.append(paciente.getTelefone()+";");
 		buffer.append(paciente.getEmail() + ";");
 		buffer.append(paciente.getRg());
+		buffer.append(p.getDataAgenda());
+		buffer.append(p.getTipoDeAgendamento())
 		buffer.append("\n");
 		
 		atualizarTxt(buffer);
