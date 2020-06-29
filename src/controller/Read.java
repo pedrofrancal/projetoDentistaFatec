@@ -29,7 +29,7 @@ public class Read {
     }
 	
 
-	public void readFile() throws IOException {
+	public ListaLigada readFile(ListaLigada list) throws IOException {
 		BufferedReader read = new BufferedReader(new FileReader(chooseFile()));
 		StringBuffer buffer = new StringBuffer();
 		String vet[] = new String[4];
@@ -43,16 +43,15 @@ public class Read {
             //Eu guardo no vetor o que estava salvo no buffer
             
             paciente.setNomecompleto(vet[0]);
-            System.out.println(paciente.getNomecompleto());
             paciente.setTelefone(vet[1]);
-            System.out.println(paciente.getTelefone());
             paciente.setEmail(vet[2]);
-            System.out.println(paciente.getEmail());
             paciente.setRg(vet[3]);
-            System.out.println(paciente.getRg());
-            
+            paciente.setDataAgenda(vet[4]);
+            paciente.setTipoDeAgentamento(vet[5]);
+            list.adicionar(paciente);
 		}
 		read.close();
+		return list;
 		// Fecho o leitor
 	}
 	
