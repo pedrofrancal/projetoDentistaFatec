@@ -25,7 +25,7 @@ import controller.Read;
 import model.verificarTableModel;
 
 public class verificarConsultas extends JFrame {
-	private ListaLigada lista;
+	private ListaLigada lista = new ListaLigada();
 	private JPanel contentPane;
 	private JTable table;
 	public verificarConsultas() {
