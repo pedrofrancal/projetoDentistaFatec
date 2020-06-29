@@ -29,7 +29,12 @@ public class verificarConsultas extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	public verificarConsultas() {
-		
+		Read ler = new Read();
+		try {
+			lista = ler.readFile(lista);
+		} catch (IOException e2) {
+			e2.printStackTrace();
+		}
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 500);
 		contentPane = new JPanel();
