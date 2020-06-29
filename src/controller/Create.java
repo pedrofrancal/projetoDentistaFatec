@@ -27,7 +27,7 @@ public class Create {
 			buffer.append(p.getEmail() + ";");
 			buffer.append(p.getRg());
 			buffer.append(p.getDataAgenda());
-			buffer.append(p.getTipoDeAgendamento())
+			buffer.append(p.getTipoDeAgendamento());
 			buffer.append("\n");
 		}
 		
@@ -42,7 +42,7 @@ public class Create {
 		buffer.append(paciente.getEmail() + ";");
 		buffer.append(paciente.getRg());
 		buffer.append(paciente.getDataAgenda());
-		buffer.append(paciente.getTipoDeAgendamento())
+		buffer.append(paciente.getTipoDeAgendamento());
 		buffer.append("\n");
 		
 		atualizarTxt(buffer);
