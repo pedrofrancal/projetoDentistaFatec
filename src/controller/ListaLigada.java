@@ -90,7 +90,7 @@ public class ListaLigada{
 	
 	//verifica pelo nome do paciente e retorna a posição
 	//pode causar falhas com nomes iguais
-	public int remover(String nome) {
+	public int procurar(String nome) {
 		No agora = inicio;
 		int pos=0;
 		
@@ -104,6 +104,51 @@ public class ListaLigada{
 		return pos;
 	}
 	
+	public void ordenar() {
+		quickSort(0,verQuantia());
+	}
+	
+	//quickSort recursivo
+	private void quickSort(int inicio, int fim) {
+		if(inicio<fim) {
+			int pivo = particionar(inicio, fim);
+			quickSort(inicio, pivo-1);
+			quickSort(pivo+1, fim);
+		}
+	}
+	
+	//quebrar em partições para pesquisar
+	private int particionar(int inicio, int fim) {
+		int i = inicio;
+		for(int j = inicio; j<fim; j++) {
+			if(achar(j).getDado().getDataAgenda().compareTo(achar(fim).getDado().getDataAgenda())<0) {
+				trocar(i+1, j);
+			}
+			
+		}
+		trocar(i, fim);
+		return i;
+	}
+	
+	//usar auxiliares para trocar posição
+	private void trocar(int i, int j) {
+		No auxi = achar(i);
+		Pacientes pacientei = auxi.getDado();
+		No auxj = achar(j);
+		Pacientes pacientej = auxj.getDado();
+		auxj.setDado(pacientej);
+		auxi.setDado(pacientei);
+	}
+	
+	//passa por todas as posições em busca do numero na lista
+	private No achar(int pos) {
+		No aux = this.inicio;
+		for(int i = 0; i<pos; i++) {
+			aux = aux.getNext();
+		}
+		return aux;
+	}
+
 	public boolean remover(int pos) {
 		//aqui vemos se é maior que a contagem
 		//vamos usar verdadeiro e falso pra ver se foi possivel deletar

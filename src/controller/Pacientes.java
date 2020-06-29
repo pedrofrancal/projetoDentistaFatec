@@ -6,7 +6,8 @@ public class Pacientes {
     private String rg;
     private String email;
     private String telefone;
-
+	private String dataAgenda;
+    
     // construtor	 
     Pacientes() {
         super();
@@ -47,6 +48,15 @@ public class Pacientes {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+    public String getDataAgenda() {
+		return dataAgenda;
+	}
+
+
+	public void setDataAgenda(String dataAgenda) {
+		this.dataAgenda = dataAgenda;
 	}
 	
     
