@@ -14,4 +14,31 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/images/TEXTO TRAB.png</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/%C3%81rea%20de%20Trabalho/proejct/TEXTO%20TRAB.png</locationURI>
+		</link>
+		<link>
+			<name>src/images/gabriel fdp.png</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/%C3%81rea%20de%20Trabalho/proejct/gabriel%20fdp.png</locationURI>
+		</link>
+		<link>
+			<name>src/images/menu2.png</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/%C3%81rea%20de%20Trabalho/proejct/menu2.png</locationURI>
+		</link>
+		<link>
+			<name>src/images/re.png</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/%C3%81rea%20de%20Trabalho/proejct/re.png</locationURI>
+		</link>
+		<link>
+			<name>src/images/texto add2.png</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/%C3%81rea%20de%20Trabalho/proejct/texto%20add2.png</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
