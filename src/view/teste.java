@@ -9,12 +9,16 @@ public class teste {
 
 
 				// TODO Auto-generated method stub
-				tabelaHash h = new tabelaHash(1);
+				tabelaHash h = new tabelaHash(40);
 //				tabelaHash hash = new tabelaHash(10);
 				h.inserir("pedro");
-				h.inserir("teste");
+//				h.inserir("teste");
 				h.inserir("pedro");
+				h.inserir("vagner");
+				h.inserir("vagabunda");
+				h.inserir("coco");
 				System.out.println(h.estaVazio());
+				h.mostrarTabela();
 
 	}
 
