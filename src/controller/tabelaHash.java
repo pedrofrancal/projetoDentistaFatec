@@ -5,6 +5,9 @@ package controller;
  *Utiliza-se vetores para simular a tabela 
  */
 
+//só receber o nome na tabela
+//ordenar ela pelo nome com merge
+
 public class tabelaHash{
 		private NoHash[] tabela;
 		private int tamanho;
