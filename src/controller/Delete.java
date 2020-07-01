@@ -18,7 +18,7 @@ public class Delete {
 			buffer.append(data.getRg()+";");
 			buffer.append(data.getDataAgenda()+";");
 			buffer.append(data.getTipoDeAgendamento());
-buffer.append("\n");
+			buffer.append("\n");
             pos++;
             data = controller.get(pos);
         }while(data!=null);

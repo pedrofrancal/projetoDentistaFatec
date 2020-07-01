@@ -15,7 +15,6 @@ public class ListaLigada {
 
 	// adicionar o elemento especificado para o fim da lista
 	public void adicionar(Pacientes item) {
-		System.out.println("rola--");
 		// se vazio, temos que adicionar onde se inicia a lista
 		if (inicio == null) {
 			inicio = new No(item);
@@ -49,7 +48,6 @@ public class ListaLigada {
 	}
 
 	public void adicionar(Pacientes item, int pos) {
-		System.out.println("rola**");
 		No temporario = new No(item);
 		No agora = inicio;
 
@@ -65,12 +63,13 @@ public class ListaLigada {
 		temporario.setNext(agora.getNext());
 		// e agora arrumar o atual
 		agora.setNext(temporario);
-
+		ordenar();
 		aumentarQuantia();
 	}
 
 	public Pacientes get(int pos) {
-
+		
+		ordenar();
 		// retornar a posição exata
 		// para isso temos que validar se a pos é >0
 		if (pos < 0) {
@@ -95,7 +94,7 @@ public class ListaLigada {
 	// pode causar falhas com nomes iguais
 	public Pacientes procurar(String nome) {
 		No agora = inicio;
-
+		ordenar();
 		if (inicio != null) {
 			while (agora.getDado().getNomecompleto() != nome || agora.getNext() == null) {
 				agora = agora.getNext();
@@ -159,8 +158,6 @@ public class ListaLigada {
 		if (this.inicio != null) {
 			if (agora.getDado().getNomecompleto().equals(nome)) {
 				this.inicio = this.inicio.getNext().getNext();
-
-				System.out.println("rola");
 			} else {
 				while (!agora.getNext().getDado().getNomecompleto().equals(nome)) {
 					agora = agora.getNext();
@@ -169,6 +166,7 @@ public class ListaLigada {
 			}
 
 		}
+		ordenar();
 		// agora que voltamos 1 do fim temos que tirar do contador
 		diminuirQuantia();
 	}
@@ -205,7 +203,6 @@ public class ListaLigada {
 		Pacientes dado;
 
 		// construtor
-		@SuppressWarnings("unused")
 		public No(Pacientes dadoAdicionar) {
 			proximo = null;
 			dado = dadoAdicionar;

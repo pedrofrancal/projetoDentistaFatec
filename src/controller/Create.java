@@ -1,9 +1,13 @@
 package controller;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.swing.JOptionPane;
 
 /*Elaborado por Pedro França
  *Com o proposito de salvar o arquivo em entrada.txt
@@ -51,6 +55,11 @@ public class Create {
 	private void atualizarTxt(StringBuffer buffer) throws IOException{
 		File arq = new File("C:\\Project\\entrada.txt");
 		File dir = new File("C:\\Project");
+		
+		if(!dir.exists()) {
+			dir.mkdir();
+		}
+		
 		if (dir.exists() && dir.isDirectory()) {
 			boolean existe = false;
 			if (arq.exists()) {
@@ -67,4 +76,40 @@ public class Create {
 			throw new IOException("Diretorio invalido");
 		}
 	}
+	
+	public void atualizarLinha(Pacientes p) throws IOException {
+		File arq = new File("C:\\Project\\entrada.txt");
+		String dadoVelho = p.getNomecompleto()+";"+p.getTelefone()+";"+p.getEmail()+";"+p.getRg()+";"+p.getDataAgenda()+";"+p.getTipoDeAgendamento();
+		
+		System.out.println(dadoVelho);
+		
+		p.setNomecompleto(JOptionPane.showInputDialog(null,"Insira os novos dados"));
+		p.setRg(JOptionPane.showInputDialog(null,"Insira os novos dados"));
+		p.setEmail(JOptionPane.showInputDialog(null,"Insira os novos dados"));
+		p.setDataAgenda(JOptionPane.showInputDialog(null,"Insira os novos dados"));
+		p.setTelefone(JOptionPane.showInputDialog(null,"Insira os novos dados"));
+		p.setTipoDeAgendamento(JOptionPane.showInputDialog(null,"Insira os novos dados"));
+		
+		//atualizar arquivo com os novos dados
+		String novoDado=p.getNomecompleto()+";"+p.getTelefone()+";"+p.getEmail()+";"+p.getRg()+";"+p.getDataAgenda()+";"+p.getTipoDeAgendamento();
+		
+		System.out.println(novoDado);
+		
+		StringBuffer buffer = new StringBuffer();
+		BufferedReader reader = new BufferedReader(new FileReader(arq));
+		String lido;
+		while((lido = reader.readLine()) != null) {
+			buffer.append(lido);
+			buffer.append("\n");
+		}
+		lido = buffer.toString();
+		lido = lido.replaceFirst(dadoVelho, novoDado);
+		FileWriter writer = new FileWriter(arq);
+		PrintWriter print = new PrintWriter(writer);
+		print.write(lido);;
+		print.flush();
+		print.close();
+		reader.close();
+		writer.close();
+		}
 }

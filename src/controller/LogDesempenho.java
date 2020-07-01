@@ -24,8 +24,8 @@ public class LogDesempenho {
 	public void gerarLog(String nomeClasse) throws IOException {
 		double tempoTotal = tempoFinal - tempoInicial;
 		tempoTotal/=Math.pow(10, 9);
-		File arq = new File(System.getProperty("user.home") + "/Desktop", "log.txt");
-		File dir = new File(System.getProperty("user.home") + "/Desktop");
+		File arq = new File("C:\\Project\\log.txt");
+		File dir = new File("C:\\Project");
 		if (dir.exists() && dir.isDirectory()) {
 			boolean existe = false;
 			if (arq.exists()) {

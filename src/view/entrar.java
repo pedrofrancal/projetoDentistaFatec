@@ -42,6 +42,7 @@ public class entrar extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		@SuppressWarnings("unused")
 		Color color = new Color (237,3,3);
 		
 		txtEntrar = new JLabel("      Entrar");

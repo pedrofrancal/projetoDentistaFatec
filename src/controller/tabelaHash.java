@@ -1,5 +1,7 @@
 package controller;
 
+import javax.swing.JOptionPane;
+
 /*Elaborado por Pedro França
  *Tabela hash utilizando lista ligada
  *Utiliza-se vetores para simular a tabela 
@@ -96,15 +98,16 @@ public class tabelaHash{
 		}
 
 		public void mostrarTabela() {
-			System.out.println();
+			String texto = "";
 			for (int i = 0; i < tabela.length; i++) {
-				System.out.print(" | " + i + " | ");
 				NoHash inicio = tabela[i];
 				while (inicio != null) {
-					System.out.print(inicio.dado + " ");
+					texto+=(" | " + i + " | ");
+					texto+=(inicio.dado + " | \n");
 					inicio = inicio.prox;
-				}
-				System.out.println();
+				}				
 			}
+			JOptionPane.showMessageDialog(null,texto);
+			
 		}
 	}
