@@ -40,8 +40,8 @@ public class Create {
 		buffer.append(paciente.getNomecompleto() + ";");
 		buffer.append(paciente.getTelefone()+";");
 		buffer.append(paciente.getEmail() + ";");
-		buffer.append(paciente.getRg());
-		buffer.append(paciente.getDataAgenda());
+		buffer.append(paciente.getRg()+ ";");
+		buffer.append(paciente.getDataAgenda()+";");
 		buffer.append(paciente.getTipoDeAgendamento());
 		buffer.append("\n");
 		
@@ -49,8 +49,8 @@ public class Create {
 	}
 
 	private void atualizarTxt(StringBuffer buffer) throws IOException{
-		File arq = new File(System.getProperty("user.home") + "/Desktop", "entrada.txt");
-		File dir = new File(System.getProperty("user.home") + "/Desktop");
+		File arq = new File("C:\\Project\\entrada.txt");
+		File dir = new File("C:\\Project");
 		if (dir.exists() && dir.isDirectory()) {
 			boolean existe = false;
 			if (arq.exists()) {

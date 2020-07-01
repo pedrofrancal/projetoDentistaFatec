@@ -15,8 +15,10 @@ public class Delete {
         	buffer.append(data.getNomecompleto() + ";");
 			buffer.append(data.getTelefone()+";");
 			buffer.append(data.getEmail() + ";");
-			buffer.append(data.getRg());
-			buffer.append("\n");
+			buffer.append(data.getRg()+";");
+			buffer.append(data.getDataAgenda()+";");
+			buffer.append(data.getTipoDeAgendamento());
+buffer.append("\n");
             pos++;
             data = controller.get(pos);
         }while(data!=null);
@@ -24,16 +26,14 @@ public class Delete {
         return preparo;
     }
 
-    public void removePaciente(ListaLigada controller, String nome) throws IOException {
-    	Pacientes indexPaciente = controller.procurar(nome);
-    	if(!indexPaciente.getNomecompleto().equals("")) {
-        	File dir = new File(System.getProperty("user.home") + "/Desktop");
-    		File arq = new File(System.getProperty("user.home") + "/Desktop", "entrada.txt");
-    		controller.remover(indexPaciente.getNomecompleto());
-            if(controller.get(0)==null) {
+    public void removePaciente(ListaLigada controller, String nome, String path) throws IOException {
+    	if(nome != "") {
+    		File arq = new File(path);
+    		if(controller.tamanho()==1) {
                 arq.delete();
             }else {
                 String save = "";
+                controller.remover(nome);
                 save += preparePaciente(controller);
                 FileWriter writer = new FileWriter(arq);
                 PrintWriter printer = new PrintWriter(writer);

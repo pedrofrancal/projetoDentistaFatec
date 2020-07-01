@@ -7,6 +7,8 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import view.verificarConsultas;
+
 //Parte Read feita por Augusto Furtado
 
 
@@ -30,18 +32,18 @@ public class Read {
 	
 
 	public ListaLigada readFile(ListaLigada list) throws IOException {
-		BufferedReader read = new BufferedReader(new FileReader(chooseFile()));
-		StringBuffer buffer = new StringBuffer();
-		String vet[] = new String[4];
-		Pacientes paciente = new Pacientes();
+		String path = chooseFile().getPath();
 		
+		BufferedReader read = new BufferedReader(new FileReader(path));
+		verificarConsultas.path10 = path;
+		String vet[] ;
+		Pacientes paciente;
 		String lido;
 		while((lido = read.readLine())!=null) {
-			buffer.append(lido);
-            String teste = buffer.toString();
-            vet = teste.split(";");
+			System.out.println("rolas++");
+           vet = lido.split(";");
             //Eu guardo no vetor o que estava salvo no buffer
-            
+            paciente = new Pacientes();
             paciente.setNomecompleto(vet[0]);
             paciente.setTelefone(vet[1]);
             paciente.setEmail(vet[2]);

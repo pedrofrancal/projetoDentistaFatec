@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -50,12 +51,14 @@ public class principal extends JFrame {
 		contentPane.add(txtSair);
 		
 		JLabel txtBemvindo = new JLabel("");
-		txtBemvindo.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\\u00C1rea de Trabalho\\proejct\\TEXTO TRAB.png"));
+		String path2 = new File("").getAbsolutePath();
+        txtBemvindo.setIcon(new ImageIcon(path2 + "\\src\\image\\TEXTO TRAB.png"));
 		txtBemvindo.setBounds(249, 64, 591, 344);
 		contentPane.add(txtBemvindo);
 		
 		JLabel telaMenu = new JLabel("");
-		telaMenu.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\\u00C1rea de Trabalho\\proejct\\menu2.png"));
+		String path = new File("").getAbsolutePath();
+        telaMenu.setIcon(new ImageIcon(path + "\\src\\image\\menu2.png"));
 		telaMenu.setBounds(0, 0, 884, 461);
 		contentPane.add(telaMenu);
 		

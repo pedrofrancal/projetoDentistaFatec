@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -59,7 +60,8 @@ public class entrar extends JFrame {
 		
 		JLabel telaEntrar = new JLabel("");
 		telaEntrar.setFont(new Font("Arial", Font.PLAIN, 11));
-		telaEntrar.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\\u00C1rea de Trabalho\\proejct\\gabriel fdp.png"));
+		String path = new File("").getAbsolutePath();
+        telaEntrar.setIcon(new ImageIcon(path + "\\src\\image\\gabriel fdp.png"));
 		telaEntrar.setBounds(0, 0, 884, 461);
 		contentPane.add(telaEntrar);
 		

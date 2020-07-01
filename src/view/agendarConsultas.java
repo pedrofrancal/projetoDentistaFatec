@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
@@ -64,7 +65,8 @@ public class agendarConsultas extends JFrame {
 		contentPane.add(txtSair);
 		
 		JLabel TelaAdd = new JLabel("");
-		TelaAdd.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\\u00C1rea de Trabalho\\proejct\\texto add2.png"));
+		String path = new File("").getAbsolutePath();
+		TelaAdd.setIcon(new ImageIcon(path + "\\src\\image\\texto add2.png"));
 		TelaAdd.setBounds(218, 51, 642, 388);
 		contentPane.add(TelaAdd);
 		
@@ -103,11 +105,12 @@ public class agendarConsultas extends JFrame {
 		
 		
 		JLabel telaMenu = new JLabel("");
-		telaMenu.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\\u00C1rea de Trabalho\\proejct\\menu2.png"));
+		String path2 = new File("").getAbsolutePath();
+		telaMenu.setIcon(new ImageIcon(path2 + "\\src\\image\\menu2.png"));
 		telaMenu.setBounds(0, 0, 884, 461);
 		contentPane.add(telaMenu);
 		
-		btnAdd = new JLabel("New label");
+		btnAdd = new JLabel("");
 		btnAdd.setBounds(693, 400, 124, 37);
 		contentPane.add(btnAdd);
 		btnAdd.addMouseListener(new MouseAdapter() {
