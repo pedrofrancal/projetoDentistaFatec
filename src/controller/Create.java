@@ -9,9 +9,6 @@ import java.io.PrintWriter;
 
 import javax.swing.JOptionPane;
 
-/*Elaborado por Pedro França
- *Com o proposito de salvar o arquivo em entrada.txt
- */
 
 public class Create {
 	/*

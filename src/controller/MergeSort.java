@@ -5,10 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/*Elaborado por Pedro França
- *MergeSort usando um vetor de Strings
- *Como chamar: mergeSort(vetor, começo, fim)
- */
 
 public class MergeSort {
 

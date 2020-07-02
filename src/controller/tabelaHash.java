@@ -2,10 +2,6 @@ package controller;
 
 import javax.swing.JOptionPane;
 
-/*Elaborado por Pedro França
- *Tabela hash utilizando lista ligada
- *Utiliza-se vetores para simular a tabela 
- */
 
 //só receber o nome na tabela
 //ordenar ela pelo nome com merge

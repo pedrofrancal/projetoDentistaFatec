@@ -1,9 +1,5 @@
 package controller;
 
-/*Elaborado por Pedro França
- *Classe para implementação de uma lista ligada
- */
-
 public class ListaLigada {
 	private static int contador;
 	private No inicio;

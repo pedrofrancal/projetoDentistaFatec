@@ -5,9 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/*Elaborado por Pedro França
- *Utilizando o compareTo para ordenar Strings
- */
+
 public class HeapSortLetras {
 	public void HeapSort(String[] v) {
 		constroiMaximaOrdem(v);
@@ -31,9 +29,9 @@ public class HeapSortLetras {
 			String data1, data2;
 			String[] vetTemp;
 			vetTemp=vetor[max].split(";");
-			data1 = vetTemp[5];
+			data1 = vetTemp[0];
 			vetTemp=vetor[right].split(";");
-			data2 = vetTemp[5];
+			data2 = vetTemp[0];
 			
 			System.out.println(data1+","+data2);
 			// verifica qual dos dois filhos possuem o maior valor
