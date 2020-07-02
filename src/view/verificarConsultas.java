@@ -40,7 +40,7 @@ public class verificarConsultas extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1984205793126500855L;
-	public static String path10;
+	public static String path10 = "C:\\Project\\entrada.txt";
 	private ListaLigada lista;
 	private JPanel contentPane;
 	private JTable table;
@@ -260,7 +260,9 @@ public class verificarConsultas extends JFrame {
 		btnRemove.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				log.setTempoInicial(System.nanoTime());
 				if (table.isColumnSelected(6)) {
+					
 					String nome = table.getValueAt(table.getSelectedRow(), 0).toString();
 
 					Delete database = new Delete();
@@ -279,6 +281,13 @@ public class verificarConsultas extends JFrame {
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Selecione uma linha na coluna" + " opções", "Error", 0);
+				}
+				log.setTempoFinal(System.nanoTime());
+				try {
+					log.gerarLog("DELETAR REGISTRO");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 			}
 		});

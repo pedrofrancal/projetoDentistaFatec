@@ -63,13 +63,12 @@ public class ListaLigada {
 		temporario.setNext(agora.getNext());
 		// e agora arrumar o atual
 		agora.setNext(temporario);
-		ordenar();
 		aumentarQuantia();
+		ordenar();
 	}
 
 	public Pacientes get(int pos) {
 		
-		ordenar();
 		// retornar a posição exata
 		// para isso temos que validar se a pos é >0
 		if (pos < 0) {
@@ -94,7 +93,6 @@ public class ListaLigada {
 	// pode causar falhas com nomes iguais
 	public Pacientes procurar(String nome) {
 		No agora = inicio;
-		ordenar();
 		if (inicio != null) {
 			while (agora.getDado().getNomecompleto() != nome || agora.getNext() == null) {
 				agora = agora.getNext();
@@ -122,7 +120,7 @@ public class ListaLigada {
 	private int particionar(int inicio, int fim) {
 		int i = inicio;
 		for (int j = inicio; j < fim; j++) {
-			if (achar(j).getDado().getDataAgenda().compareTo(achar(fim).getDado().getDataAgenda()) < 0) {
+			if (achar(j).getDado().getNomecompleto().compareTo(achar(fim).getDado().getNomecompleto()) < 0) {
 				trocar(i + 1, j);
 			}
 
@@ -144,20 +142,22 @@ public class ListaLigada {
 	// passa por todas as posições em busca do numero na lista
 	private No achar(int pos) {
 		No aux = this.inicio;
-		for (int i = 0; i < pos; i++) {
+		int i = 0;
+		do {
 			aux = aux.getNext();
-		}
+			i++;
+		}while(i<pos);
 		return aux;
 	}
 
 	public void remover(String nome) {
 		No agora = this.inicio;
-		if (this.inicio.getNext() == null) {
-			this.inicio = null;
+		if (inicio.getNext() == null) {
+			inicio = null;
 		}
-		if (this.inicio != null) {
+		if (inicio != null) {
 			if (agora.getDado().getNomecompleto().equals(nome)) {
-				this.inicio = this.inicio.getNext().getNext();
+				inicio = inicio.getNext().getNext();
 			} else {
 				while (!agora.getNext().getDado().getNomecompleto().equals(nome)) {
 					agora = agora.getNext();
@@ -166,9 +166,9 @@ public class ListaLigada {
 			}
 
 		}
-		ordenar();
 		// agora que voltamos 1 do fim temos que tirar do contador
 		diminuirQuantia();
+		ordenar();
 	}
 
 	public int tamanho() {
